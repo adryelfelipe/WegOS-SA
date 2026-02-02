@@ -1,7 +1,7 @@
 # WEG OS – Sistema de Gestão de Ordens de Serviço e Ocorrências 🏭
 
-![Java](https://img.shields.io/badge/Java-17-ED8B00?style=for-the-badge&logo=java&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-8.0-00000F?style=for-the-badge&logo=mysql&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
 ![Architecture](https://img.shields.io/badge/Architecture-Clean_Arch_%2B_DDD-green?style=for-the-badge)
 
 ## 📌 Visão Geral
