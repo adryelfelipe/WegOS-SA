@@ -14,25 +14,29 @@ O sistema gerencia **Máquinas**, **Ordens de Serviço (OS)** e **Ocorrências**
 
 ## 🏗️ Arquitetura do Projeto
 
-Diferente da estrutura MVC tradicional, optamos por uma arquitetura baseada nos princípios de **Clean Architecture** e **DDD (Domain-Driven Design)**. Isso garante que as regras de negócio da WEG estejam desacopladas de detalhes técnicos como banco de dados ou interface.
+Para garantir escalabilidade e manutenção simplificada, o sistema foi organizado seguindo princípios de **Clean Architecture** e **DDD (Domain-Driven Design)**. A estrutura de diretórios separa claramente as regras de negócio (Domínio) dos detalhes técnicos (Infraestrutura) e da interação com o usuário (Views).
 
-### 📂 Estrutura de Pastas (Explicação)
+Abaixo, a árvore de diretórios explicada:
 
-A organização do código reflete a separação de responsabilidades:
-
-* **`Dominio` (O Coração do Sistema):**
-    * Contém as Entidades (`OrdemDeServico`, `Maquina`, `Funcionario`), Value Objects e **Interfaces de Repositório**.
-    * *Regra de Ouro:* Esta camada desconhece o banco de dados.
-* **`Aplicacao` (Casos de Uso):**
-    * Orquestra as ações do sistema (ex: "Abrir uma nova OS", "Gerar Relatório"). Faz a ponte entre a View e o Domínio.
-* **`Infraestrutura` (Detalhes Técnicos):**
-    * **Persistencia:** Implementação dos Repositórios usando **JDBC Puro**.
-    * **Configuracao:** `ConnectionFactory` para conexão centralizada com o banco (MySQL/Aiven).
-    * Aqui aplicamos o padrão **Mapper** para converter `ResultSet` em Objetos de Domínio.
-* **`Views` (Interface):**
-    * Menus de console separados por contexto (FuncionarioView, MaquinaView, etc.) para interação com o usuário.
-* **`Util`:**
-    * Classes utilitárias auxiliares.
+src/main/java/
+├── Aplicacao/                # Camada de Orquestração (Use Cases)
+│   ├── Funcionario/          # Regras de aplicação para usuários
+│   ├── Maquina/              # Casos de uso de ativos
+│   └── OrdemDeServico/       # Fluxos de abertura/fechamento de OS
+│
+├── Dominio/                  # O "Coração" do Negócio (Core)
+│   ├── Funcionario/          # Entidades e Interfaces de Repositório
+│   ├── Maquina/              # Regras de validação de equipamentos
+│   └── OrdemDeServico/       # Lógica complexa e Agregados
+│
+├── Infraestrutura/           # Componentes Técnicos (Support)
+│   ├── Configuracao/         # ConnectionFactory (Singleton)
+│   ├── Persistencia/         # Implementação JDBC dos Repositórios
+│   └── Util/                 # Validadores e ferramentas auxiliares
+│
+└── Views/                    # Interface do Usuário (Console)
+    ├── Sistema/              # Menus principais
+    └── [Modulos]/            # Telas específicas por contexto
 
 ---
 
