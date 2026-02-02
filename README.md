@@ -71,23 +71,3 @@ Implementamos uma estratégia de **Tabelas de Histórico**:
     * Aggregate Pattern (DDD)
 
 ---
-
-## ⚙️ Como Executar
-
-### Pré-requisitos
-* Java JDK instalado.
-* MySQL instalado (ou acesso ao servidor na nuvem configurado).
-
-### Passos
-1.  **Clone o repositório:**
-    ```bash
-    git clone [https://github.com/seu-usuario/seu-repo.git](https://github.com/seu-usuario/seu-repo.git)
-    ```
-2.  **Configuração do Banco:**
-    * Execute o script `database/script.sql` para criar as tabelas e inserir os dados iniciais (população de Enums).
-    * Verifique a classe `ConnectionFactory` na pasta `Infraestrutura` para ajustar as credenciais, se necessário.
-3.  **Executar:**
-    * Abra o projeto na sua IDE (IntelliJ/Eclipse/VS Code).
-    * Localize a classe `Main` (geralmente na raiz ou pacote principal).
-    * Execute a aplicação.
-
