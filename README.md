@@ -1,14 +1,14 @@
-# WEG OS – Sistema de Gestão de Ordens de Serviço e Ocorrências 🏭
+# WEG OS – Sistema de Gestão de Ordens de Serviço 🏭
 
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
+![Java](https://img.shields.io/badge/Java-17-ED8B00?style=for-the-badge&logo=java&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-00000F?style=for-the-badge&logo=mysql&logoColor=white)
 ![Architecture](https://img.shields.io/badge/Architecture-Clean_Arch_%2B_DDD-green?style=for-the-badge)
 
-## 📌 Sobre o Projeto
+## 📌 Visão Geral
 
-Este projeto foi desenvolvido como parte da **Situação de Aprendizagem Integrada** (Projeto Integrador). O objetivo é solucionar a dor fictícia da empresa WEG, automatizando o controle de manutenções industriais que anteriormente era manual.
+Este projeto é uma solução backend robusta para gestão de manutenções industriais, desenvolvida como Projeto Integrador. O sistema automatiza o controle de **Máquinas**, **Ordens de Serviço** e **Ocorrências**, substituindo processos manuais por um fluxo digital auditável e seguro.
 
-O sistema gerencia **Máquinas**, **Ordens de Serviço (OS)** e **Ocorrências**, com foco em integridade de dados, rastreabilidade e automação de regras de negócio complexas.
+O diferencial técnico do projeto reside na sua arquitetura, que evita frameworks pesados (como Hibernate) em favor de **JDBC Puro** e **POO avançada**, garantindo performance e controle total sobre a persistência dos dados.
 
 ---
 
@@ -18,6 +18,7 @@ Para garantir escalabilidade e manutenção simplificada, o sistema foi organiza
 
 Abaixo, a árvore de diretórios explicada:
 
+```text
 src/main/java/
 ├── Aplicacao/                # Camada de Orquestração (Use Cases)
 │   ├── Funcionario/          # Regras de aplicação para usuários
@@ -37,8 +38,6 @@ src/main/java/
 └── Views/                    # Interface do Usuário (Console)
     ├── Sistema/              # Menus principais
     └── [Modulos]/            # Telas específicas por contexto
-
----
 
 ## 🚀 Principais Funcionalidades
 
